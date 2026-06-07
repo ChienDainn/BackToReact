@@ -1,19 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import { fetchUsers } from "../services/userApi";
 import type { User } from "../types/user";
 
-export default function Users() {
+export default function UsersPage() {
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((res) => {
-        if (!res.ok) throw new Error("Fetch failed");
-        return res.json();
-      })
-      .then((data: User[]) => setUsers(data))
+    fetchUsers()
+      .then(setUsers)
       .catch(() => setError("Không tải được danh sách users"))
       .finally(() => setLoading(false));
   }, []);
@@ -25,8 +22,7 @@ export default function Users() {
     <section className="page-card">
       <h1>👥 Danh sách Users</h1>
       <p>
-        Data fetch bằng <code>useEffect</code> +{" "}
-        <code>fetch()</code> khi vào trang.
+        Data fetch qua <code>services/userApi.ts</code> khi vào trang.
       </p>
 
       <ul className="users-list">

@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
+import { fetchUserById } from "../services/userApi";
 import type { User } from "../types/user";
 
-export default function UserDetail() {
+export default function UserDetailPage() {
   const { id } = useParams();
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
@@ -14,12 +15,8 @@ export default function UserDetail() {
     setLoading(true);
     setError("");
 
-    fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
-      .then((res) => {
-        if (!res.ok) throw new Error("Fetch failed");
-        return res.json();
-      })
-      .then((data: User) => setUser(data))
+    fetchUserById(id)
+      .then(setUser)
       .catch(() => setError("Không tải được user"))
       .finally(() => setLoading(false));
   }, [id]);

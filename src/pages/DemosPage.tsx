@@ -1,12 +1,11 @@
-import "../App.css";
-import ArrayStateDemo from "../ArrayStateDemo";
-import BatchStateDemo from "../BatchStateDemo";
-import CacheDemo from "../CacheDemo";
-import ColorSwitchDemo from "../ColorSwitchDemo";
-import Gallery from "../Gallery";
-import RecipeList from "../RecipeList";
-import RefDemo from "../RefDemo";
-import StateDemo from "../StateDemo";
+import ArrayStateDemo from "../features/demos/ArrayStateDemo";
+import BatchStateDemo from "../features/demos/BatchStateDemo";
+import CacheDemo from "../features/demos/CacheDemo";
+import ColorSwitchDemo from "../features/demos/ColorSwitchDemo";
+import RefDemo from "../features/demos/RefDemo";
+import StateDemo from "../features/demos/StateDemo";
+import Gallery from "../features/gallery/Gallery";
+import RecipeList from "../features/recipes/RecipeList";
 
 export default function DemosPage() {
   return (

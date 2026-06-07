@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <section className="page-card">
       <h1>🏠 Home</h1>

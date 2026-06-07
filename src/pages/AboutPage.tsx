@@ -1,4 +1,4 @@
-export default function About() {
+export default function AboutPage() {
   return (
     <section className="page-card">
       <h1>ℹ️ About</h1>
