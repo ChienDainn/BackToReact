@@ -1,27 +1,10 @@
-import "./App.css";
-import ArrayStateDemo from "./ArrayStateDemo";
-import BatchStateDemo from "./BatchStateDemo";
-import ColorSwitchDemo from "./ColorSwitchDemo";
-import Gallery from "./Gallery";
-import RecipeList from "./RecipeList";
-import StateDemo from "./StateDemo";
+import { BrowserRouter } from "react-router";
+import AppRoutes from "./routes";
 
-function App() {
+export default function App() {
   return (
-    <main className="gallery-page">
-      <StateDemo />
-      <hr />
-      <BatchStateDemo />
-      <hr />
-      <ArrayStateDemo />
-      <hr />
-      <ColorSwitchDemo />
-      <hr />
-      <RecipeList />
-      <hr />
-      <Gallery />
-    </main>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   );
 }
-
-export default App;
